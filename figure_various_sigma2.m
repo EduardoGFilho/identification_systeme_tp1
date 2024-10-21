@@ -24,4 +24,5 @@ legend('Original Impulse Response', 'Estimated Impulse Response (CRA, \sigma^2 =
     , 'Estimated Impulse Response (CRA, \sigma^2 = 0.5)' ...
     , 'Estimated Impulse Response (CRA, \sigma^2 = 1)' ...
     , 'Estimated Impulse Response (CRA, \sigma^2 = 5)' );
-saveas(gcf,'figure_various_sig2.pdf')
+set(gcf, 'PaperSize',[10 10]);
+print(gcf,'figure_various_sigma2.pdf', '-dpdf','-bestfit');

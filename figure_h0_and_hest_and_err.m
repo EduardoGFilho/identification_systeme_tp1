@@ -20,3 +20,7 @@ subplot(2,1,2);
 plot(err, 'r-'); hold on;
 grid();
 legend('Error Signal');
+
+set(gcf, 'PaperSize',[10 10]);
+print(gcf,'h0_and_hest.pdf', '-dpdf','-bestfit');
+

@@ -21,4 +21,5 @@ plot(NValues,EVec,'r-');
 grid();
 legend('Error Energy');
 xlabel('Duration of Input')
-saveas(gcf,'figure_E_over_N.pdf')
+set(gcf, 'PaperSize',[10 10]);
+print(gcf,'figure_E_over_N.pdf', '-dpdf','-bestfit');
