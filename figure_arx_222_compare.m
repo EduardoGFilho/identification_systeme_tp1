@@ -21,5 +21,5 @@ hest = impulse(sysArx,cra_size);
 figure();
 compare(data,sysArx);
 grid();
-saveas(gcf,'figure_arx_222_compare.pdf')
-    
+set(gcf, 'PaperSize',[15 15]);
+print(gcf,'figure_arx_222_compare.pdf', '-dpdf','-bestfit');

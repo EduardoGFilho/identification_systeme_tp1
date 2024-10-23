@@ -15,12 +15,12 @@ u = idinput(N);
 y = sim(sys,u);
 
 data = iddata(y,u,Ts);
-sysArx = arx(data,[1 1 1]);
+sysArx = arx(data,[1 1 0]);
 hest = impulse(sysArx,cra_size);
 
 figure();
 compare(data,sysArx);
 grid();
 set(gcf, 'PaperSize',[15 15]);
-print(gcf,'figure_arx_111_compare.pdf', '-dpdf','-bestfit');
+print(gcf,'figure_arx_110_compare.pdf', '-dpdf','-bestfit');
     
