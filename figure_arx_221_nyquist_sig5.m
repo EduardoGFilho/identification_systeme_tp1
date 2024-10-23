@@ -8,11 +8,11 @@ F = 1;
 cra_size = 50;
 N = 1000;
 
-sys = idpoly(A, B, C, D, F, 0, Ts);
+sys = idpoly(A, B, C, D, F, 5, Ts);
 h0 = impulse(sys,cra_size);
 
 u = idinput(N);
-y = sim(sys,u);
+y = sim(sys,u,'Noise');
 
 data = iddata(y,u,Ts);
 sysArx = arx(data,[2 2 1]);
@@ -22,5 +22,5 @@ figure();
 np = nyquistplot(sysArx);
 showConfidence(np,2);
 set(gcf, 'PaperSize',[15 15]);
-print(gcf,'figure_arx_221_nyquist_sig0.pdf', '-dpdf','-bestfit');
+print(gcf,'figure_arx_221_nyquist_sig5.pdf', '-dpdf','-bestfit');
     

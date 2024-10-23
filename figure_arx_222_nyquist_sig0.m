@@ -21,6 +21,6 @@ hest = impulse(sysArx,cra_size);
 figure();
 np = nyquistplot(sysArx);
 showConfidence(np,2);
-set(gcf, 'PaperSize',[10 10]);
+set(gcf, 'PaperSize',[15 15]);
 print(gcf,'figure_arx_222_nyquist_sig0.pdf', '-dpdf','-bestfit');
     
