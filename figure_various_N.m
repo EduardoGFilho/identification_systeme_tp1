@@ -23,7 +23,7 @@ legend('Original Impulse Response', 'Estimated Impulse Response (CRA, N = 100)' 
     , 'Estimated Impulse Response (CRA, N = 1000)');
 
 % To consult error values and such
-set(gcf, 'PaperSize',[10 10]);
+set(gcf, 'PaperSize',[15 15]);
 print(gcf,'figure_various_N.pdf', '-dpdf','-bestfit');
 
 save("figure_various_N.mat")

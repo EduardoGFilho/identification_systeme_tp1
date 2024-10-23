@@ -21,5 +21,5 @@ plot(Sig2Values,EVec,'r-');
 grid();
 legend('Error Energy');
 xlabel('Noise Variance')
-set(gcf, 'PaperSize',[10 10]);
+set(gcf, 'PaperSize',[15 15]);
 print(gcf,'figure_E_over_Sigma2.pdf', '-dpdf','-bestfit');
