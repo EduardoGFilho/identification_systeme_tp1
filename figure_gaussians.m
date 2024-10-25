@@ -1,18 +1,21 @@
-Ts = 1;
-A = [1 -1.5 0.7];
-B = [0 1 0.5];
-C = 1;
-D = 1;
-F = 1;
-N = 100;
-K = 50;
-sigma2 = 0;
 
-[h0, hest, err, E] = crasEstimation(Ts,A,B,C,D,F,N,K,sigma2);
+x = linspace(-5,5,100);
+gauss01 = gaussdist(x,0,0.1);
+gauss05 = gaussdist(x,0,0.5);
+gauss1 = gaussdist(x,0,1);
+gauss5 = gaussdist(x,0,5);
 
 figure();
-plot(h0, 'r-'); hold on;
-plot(hest, 'b-');
+plot(x, gauss01, "b-"); hold on;
+plot(x, gauss05, "k-");
+plot(x, gauss1, "g-");
+plot(x, gauss5, "y-");
+
+hold on;
 grid();
-legend('Original Impulse Response', 'Estimated Impulse Response (CRA)');
-saveas(gcf,'figure_N=100.pdf')
+ylabel("PDF")
+xlabel("x");
+legend('\sigma^2 = 0.1', '\sigma^2 = 0.5','\sigma^2 = 1','\sigma^2 = 5');
+set(gcf, 'PaperSize',[15 15]);
+print(gcf,'figure_guassians.pdf', '-dpdf','-bestfit');
+
